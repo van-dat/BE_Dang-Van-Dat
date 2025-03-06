@@ -8,13 +8,10 @@ import { login, register } from './src/controllers/user_controller';
 
 const app = express();
 
-// Middleware
 app.use(json());
 
-// Kết nối MongoDB
 connectDB()
 
-// Routes
 app.post('/api/update-score', authenticateToken, updateScore);
 app.get('/api/top-scores', getTopScores);
 app.post('/api/login', login);
